@@ -1,0 +1,121 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe S. Belmonte</title>
+    <link rel="stylesheet" href="./css/Portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>   
+<body>
+    <header>
+        <a href="#" class="brand">Felipe S. Belmonte</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="Portfolio.html">Home</a>
+                <a href="/sub-html/about.html">Sobre mim</a>
+                <a href="/sub-html/contato.html">Contanto</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="/assets/Videos/Video-slide 1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="/assets/Videos/Video-slide 6.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="/assets/Videos/Video-slide 3.mp4" autoplay muted loop></video>
+ 
+            
+            <!-- Apresentação inicial -->
+            <div class="content active">
+
+            <!-- Imagem de destaque -->
+            <img class="img-slide-1 active" src="/assets/Img/WhatsApp Image 2025-04-03 at 18.45.50.jpeg" alt="">
+
+                <h1>Olá, eu sou <br><span>Felipe Belmonte</span></h1>
+                <p>Desenvolvedor FullStack apaixonado por tecnologia e inovação.</p>
+                <a href="contact.html">Entre em contato</a>
+            </div>
+            
+            <!-- Seção sobre habilidades -->
+            <div class="content">
+                <h1>Minhas Habilidades</h1>
+                <p>Possuo experiência em desenvolvimento Back-end e Front-end utilizando tecnologias como C#, JavaScript e Node.js.</p>
+
+                <img class="img-slide-2" src="/assets/icons/icons8-html-5-50.png" alt="" background-color="#000000">
+                <img class="img-slide-2" src="/assets/icons/icons8-css3-50.png" alt="">
+                <img class="img-slide-2" src="/assets/icons/icons8-javascript-48.png" alt="">
+                <img class="img-slide-2" src="/assets/icons/icons8-c++-48.png" alt="">
+                <img class="img-slide-2" src="/assets/icons/icons8-programação-c-48.png" alt="">
+
+            </div>
+            
+            <!-- Seção sobre experiência profissional -->
+            <div class="content">
+
+                <img class="img-slide-3" src="/assets/Img/WhatsApp Image 2025-04-03 at 21.42.08.jpeg" alt="">
+                <img src="icons8-troféu-64.png" alt="">
+                <h1>Minha Experiência</h1>
+                <p>Atualmente trabalho como Assistente de Compras, onde desenvolvi habilidades em técnicas de negociação e gestão de suprimentos.
+                Também possuo experiência em atendimento ao cliente, onde desenvolvi habilidades em comunicação e resolução de problemas.</p>
+                Futuramento programador de FullStack, iniciando essa carreira na AcademyEniac
+                </p>
+            </div>
+
+        <div class="media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instragram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>    
+    </section>
+
+    
+    <script type="text/javascript">
+    //Javascript of responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+   
+        
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+    //Javascript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+   
+
+    var sliderNav = function(manual){
+        btns.forEach((btn) => {
+            btn.classList.remove("active")
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+             
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+        
+    }
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        });
+    });
+    </script>
+</body>
+</html>
